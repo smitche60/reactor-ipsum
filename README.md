@@ -27,7 +27,7 @@ Once the project moves into development, the press release can be used as a touc
   > Traditional lorem ipsum text is boring. Spice up your placeholder text with Reactor Ipsum.
 
 ## Solution ##
-  > The Reactor Ipsum app allows users to select the type and length of placeholder text that suits their needs, and instantly generates the placeholder text that suits their needs.
+  > The Reactor Ipsum app allows users to select the type and length of placeholder text that suits their needs, and instantly generates the perfect placeholder text.
 
 ## How to Get Started ##
   > To start generating Reactor Ipsum, simply make your style selections and click generate.
