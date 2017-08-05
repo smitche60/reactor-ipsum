@@ -1,4 +1,4 @@
-var app = angular.module('app', [])
+angular.module('app', [])
 
   .controller('AppController', function(){
 
@@ -9,7 +9,7 @@ var app = angular.module('app', [])
   })
 
   .component('app', {
-    contoller: 'AppController',
-    //templateUrl: 'src/templates/app.html'
-    template: "<div>I'm the app.html div!</div>"
+    controller: 'AppController',
+    templateUrl: 'templates/app.html'
+    //template: "<div>I'm the app.html div!</div>"
   })

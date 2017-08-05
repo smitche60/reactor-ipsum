@@ -9,7 +9,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //app.set('views', __dirname + '/views');
-//app.use(express.static(__dirname + '/src'));
+
+//Serves get requests to '/' (serves up index.html in that dir)
+app.use(express.static(__dirname + '/src'));
 
 require('./routes')(app);
 
