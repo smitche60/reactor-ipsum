@@ -26,18 +26,18 @@ module.exports = app;
 /***************************************************/
 
 //put this wherever you want
-insertWord = function(word) {
+// insertWord = function(word) {
 
-  newWord = new Word({wordValue: word});
+//   newWord = new Word({wordValue: word});
 
-  var promise = newWord.save(function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('document added: ' + word)
-    }
-  });
-}
+//   var promise = newWord.save(function(err) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log('document added: ' + word)
+//     }
+//   });
+// }
 
 // insertWord('meow')
 
@@ -49,7 +49,37 @@ var arr = [
 {wordValue: 'Martell'},
 {wordValue: 'Barathean'},
 {wordValue: 'Stark'},
-{wordValue: 'Targaryen'}
+{wordValue: 'Targaryen'},
+{wordValue: 'Moo'},
+{wordValue: 'LearnApp'},
+{wordValue: 'Makerpass'},
+{wordValue: 'Zoom'},
+{wordValue: 'Moo'},
+{wordValue: 'Meow'},
+{wordValue: 'Pep Talk'},
+{wordValue: 'Party Parrot'},
+{wordValue: 'Help Desk'},
+{wordValue: 'Townhall'},
+{wordValue: 'Codybot'},
+{wordValue: 'Angular'},
+{wordValue: 'React'},
+{wordValue: 'Backbone'},
+{wordValue: 'Node'},
+{wordValue: 'Squishy-Mic'},
+{wordValue: 'Greenfield'},
+{wordValue: 'Legacy'},
+{wordValue: 'Shepherd'},
+{wordValue: 'Social Hack Night'},
+{wordValue: 'BeesBeesBees'},
+{wordValue: 'SubClass Dance Party'},
+{wordValue: 'Chatterbox'},
+{wordValue: 'Precourse'},
+{wordValue: 'Thesis'},
+{wordValue: 'Shortly'},
+{wordValue: 'Sqool'},
+{wordValue: 'recast.ly'},
+{wordValue: 'HRR Cribs'},
+{wordValue: 'Tapouts'}
 ]
 
 
@@ -57,10 +87,31 @@ var arr = [
 //   console.log('bulk upload complete')
 // })
 
-Word.find({}).exec(function(err, word) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(word);
-  }
+Word.deleteMany({}, function(){
+  Word.insertMany(arr, function() {
+    Word.find({}).exec(function(err, results) {
+      if (err) {
+        console.log(err);
+      } else {
+        results.forEach(function(item){console.log(item.wordValue)})
+      }
+    })
+  })
 })
+
+
+// Word.find({}).exec(function(err, word) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     // console.log(word);
+//     word.forEach(function(item){console.log(item.wordValue)})
+//   }
+// })
+
+
+
+
+
+
+
