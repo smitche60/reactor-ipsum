@@ -25,15 +25,6 @@ module.exports = app;
 /******************Database*************************/
 /***************************************************/
 
-//add this in its own config file
-//mongoose.connect('mongodb://127.0.0.1', {useMongoClient: true});
-
-// add this in its own model
-// module.exports = Word
-// var Word = mongoose.model('Word', {
-//   wordValue: {type: String}
-// });
-
 //put this wherever you want
 insertWord = function(word) {
 
@@ -48,7 +39,23 @@ insertWord = function(word) {
   });
 }
 
-insertWord('meow')
+// insertWord('meow')
+
+
+
+var arr = [
+{wordValue: 'Lannister'},
+{wordValue: 'Tyrell'},
+{wordValue: 'Martell'},
+{wordValue: 'Barathean'},
+{wordValue: 'Stark'},
+{wordValue: 'Targaryen'}
+]
+
+
+// Word.insertMany(arr, function(){
+//   console.log('bulk upload complete')
+// })
 
 Word.find({}).exec(function(err, word) {
   if (err) {
