@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Promise = require("bluebird");
+var Promise = require('bluebird');
+var db = require('./server/config.js')
+var Word = require('./server/models.js')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,24 +25,17 @@ module.exports = app;
 /******************Database*************************/
 /***************************************************/
 
-// db = require('./wherever/iputdbstuff')
+//add this in its own config file
+//mongoose.connect('mongodb://127.0.0.1', {useMongoClient: true});
 
-// mongoose.connect('127.0.0.1');
+// add this in its own model
+// module.exports = Word
+// var Word = mongoose.model('Word', {
+//   wordValue: {type: String}
+// });
 
-// var db = mongoose.connection;
-
-// var promise = mongoose.connect('mongodb://127.0.0.1', {
-//   useMongoClient: true
-// })
-
-mongoose.connect('mongodb://127.0.0.1', {useMongoClient: true});
-
-var Word = mongoose.model('Word', {
-  wordValue: {type: String}
-});
-
-
-var insertWord = function(word) {
+//put this wherever you want
+insertWord = function(word) {
 
   newWord = new Word({wordValue: word});
 
@@ -51,12 +46,9 @@ var insertWord = function(word) {
       console.log('document added: ' + word)
     }
   });
-
 }
 
- insertWord('moo')
-
-// //console.log(Word.find({}))
+insertWord('meow')
 
 Word.find({}).exec(function(err, word) {
   if (err) {
