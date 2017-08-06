@@ -1,9 +1,30 @@
 
-<div>I'm the app.html div!</div>
+<div>
+
+  <div>I'm the app.html div!</div>
+
+  <button ng-click="$ctrl.handleClick()">
+    Get Words
+  </button>
+
+  <words data="$ctrl.data"></words>
+
+</div>
 
 
-<button ng-click="$ctrl.renderData($ctrl.otherData)">
-  imadufus
-</button>
 
-<div>{{$ctrl.data}}</div>
+
+<!-- // angular.module('app')
+//   .component('words', {
+//     bindings: {
+//       data: '<'
+//     },
+
+//     controller: function() {
+//     },
+
+//     templateUrl: 'templates/words.html'
+//   }); -->
+
+
+

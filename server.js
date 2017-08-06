@@ -44,16 +44,10 @@ module.exports = app;
 
 
 
-// Initialize data in collection
+//Initialize data in collection
 Word.deleteMany({}, function(){
   Word.insertMany(startingData, function() {
-    Word.find({}).exec(function(err, results) {
-      if (err) {
-        console.log(err);
-      } else {
-        results.forEach(function(item){console.log(item.wordValue)})
-      }
-    });
+    console.log("DB data initialized")
   });
 });
 

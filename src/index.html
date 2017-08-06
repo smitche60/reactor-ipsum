@@ -3,11 +3,13 @@
 <head>
   <title>Reactor Ipsum</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="components/app.js"></script>
 </head>
-<body>
+<body ng-app="app">
   <h1>App Goes Here</h1>
-  <app ng-app="app"></app>
+  <app></app>
+  <script src="components/app.js"></script>
+  <script src="components/words.js"></script>
+  <script src="services/wordsService.js"></script>
 </body>
 </html>
 
