@@ -1,13 +1,16 @@
 angular.module('app', [])
 
-  .controller('AppController', function(wordsService){
+  .controller('AppController', function(wordsService, addWordsService){
 
     this.ws = wordsService;
+
+    this.aws = addWordsService;
 
     this.data = '';
 
     this.handleResults = function(result) {
       this.newdata = result;
+
     }
 
     this.handleClick = function(number) {
@@ -30,8 +33,15 @@ angular.module('app', [])
       this.data = result.join(' ');
     }
 
+    this.handleNewWord = function(word) {
+      //console.log("handleNewWord")
+      //console.log(this);
+      addWordsService.addWord(word, function(){return true;});
+      wordsService.getWords(null, this.handleResults);
+    }
 
     this.ws.getWords(null, this.handleResults.bind(this));
+
 
   })
 

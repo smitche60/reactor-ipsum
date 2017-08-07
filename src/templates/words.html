@@ -1,6 +1,6 @@
 <div>
 
-  <div>How many words would you like?</div>
+  <p>How many words would you like?</p>
 
   <input
   type="text"
@@ -11,6 +11,12 @@
   <button ng-click="$ctrl.handlethumbsclick($ctrl.input)">Let's see thumbs</button>
   <div>{{$ctrl.data}}</div>
 
+  <p>Add a word to the dictionary:</p>
+  <input
+  type="text"
+  ng-model="$ctrl.newwordinput"
+  ></input>
 
+  <button ng-click="$ctrl.handlenewword($ctrl.newwordinput)">Add Word</button>
 
 </div>

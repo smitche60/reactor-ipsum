@@ -4,7 +4,8 @@ angular.module('app')
       data: '<',
       newdata: '<',
       handleclick: '<',
-      handlethumbsclick: '<'
+      handlethumbsclick: '<',
+      handlenewword: '<'
     },
 
     templateUrl: 'templates/words.html'

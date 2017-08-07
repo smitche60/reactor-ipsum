@@ -33,6 +33,25 @@ module.exports = function(app) {
 
   });
 
+  app.post('/data', function(req, res) {
+    console.log("PUT")
+
+    var word = new Word({wordValue: req.body.wordValue})
+    word.save(function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('item saved')
+      }
+    });
+
+    console.log(req.body.wordValue)
+    res.end('done')
+
+  })
+
+
+
 
 };
 
