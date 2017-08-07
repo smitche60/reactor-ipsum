@@ -3,7 +3,8 @@ angular.module('app')
     bindings: {
       data: '<',
       newdata: '<',
-      handleclick: '<'
+      handleclick: '<',
+      handlethumbsclick: '<'
     },
 
     templateUrl: 'templates/words.html'
