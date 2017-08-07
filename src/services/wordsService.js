@@ -8,7 +8,7 @@ angular.module('app').service('wordsService', function($http){
       //Success
       function(response){
         //console.log(JSON.stringify(response.data[0]))
-        callback(response.data[0])
+        callback(response.data)
       },
       //Fail
       function(err){console.log(err)})

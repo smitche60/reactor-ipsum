@@ -1,7 +1,9 @@
 angular.module('app')
   .component('words', {
     bindings: {
-      data: '<'
+      data: '<',
+      newdata: '<',
+      handleclick: '<'
     },
 
     templateUrl: 'templates/words.html'
@@ -15,3 +17,4 @@ angular.module('app')
 
 //     templateURL: 'templates/words.html'
 //   });
+
