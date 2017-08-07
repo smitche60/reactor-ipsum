@@ -1,6 +1,6 @@
 angular.module('app', [])
 
-  .controller('AppController', function(wordsService, addWordsService){
+  .controller('AppController', function(wordsService, addWordsService, $window){
 
     this.ws = wordsService;
 
@@ -10,7 +10,6 @@ angular.module('app', [])
 
     this.handleResults = function(result) {
       this.newdata = result;
-
     }
 
     this.handleClick = function(number) {
@@ -37,7 +36,8 @@ angular.module('app', [])
       //console.log("handleNewWord")
       //console.log(this);
       addWordsService.addWord(word, function(){return true;});
-      wordsService.getWords(null, this.handleResults);
+      //wordsService.getWords(null, this.handleResults);
+      $window.location.reload();
     }
 
     this.ws.getWords(null, this.handleResults.bind(this));
