@@ -1,7 +1,16 @@
+<div>
+
+  <div>How many words would you like?</div>
+
+  <input
+  type="text"
+  ng-model="$ctrl.input"
+  ></input>
+
+  <button ng-click="$ctrl.handleclick($ctrl.input)">Get words</button>
+  <button>Let me see thumbs</button>
+  <div>{{$ctrl.data}}</div>
 
 
-<div>I'm the words.html div</div>
 
-<div>{{$ctrl.data}}</div>
-
-<button ng-click="$ctrl.handleclick()">Get words</button>
+</div>

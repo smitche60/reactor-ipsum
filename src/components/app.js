@@ -4,30 +4,31 @@ angular.module('app', [])
 
     this.ws = wordsService;
 
-    this.data = 'SCOTT';
-
-    this.newData = 'Initialized value';
-
-    console.log(this.newData);
+    this.data = '';
 
     this.handleResults = function(result) {
-      this.newData = result;
-      console.log("handleResults this", this)
-      console.log(this.newData);
+      this.newdata = result;
     }
 
-    setTimeout(function(){console.log(this)},2000);
-    setTimeout(function(){console.log(this.newData)},10000);
-
-    this.handleClick = function() {
-      console.log("before handleclick this", this);
-      this.data = this.newdata
-      console.log("after handleclick this", this);
-      console.log("handleClick", this.data, this.newData);
+    this.handleClick = function(number) {
+      var result = [];
+      var len = this.newdata.length
+      for (var i=0; i<number; i++) {
+        result.push(this.newdata[Math.floor(Math.random()*len)])
+      }
+      this.data = result.join(' ');
     }
+
+    this.handleThumbsClick = function(number) {
+      var options = ['p', 'b']
+
+
+
+
+    }
+
 
     this.ws.getWords(null, this.handleResults.bind(this));
-
 
   })
 
